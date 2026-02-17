@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#questo è un commento
-#$0 è il nome dello script
+# questo è un commento
+# $0 è il nome dello script
 name=$1
 name2=$2
 
