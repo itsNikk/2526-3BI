@@ -14,6 +14,7 @@ if [ -z $2 ]
 then
     echo "Secondo parametro non inserito"
     read -p "Scrivi 2ndo param: " op
+else
     op=$2
 fi
 

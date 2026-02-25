@@ -1,0 +1,18 @@
+Scripting:
+- variabili (dichiarazione, $nome)
+- calcoli ( $(()) )
+- read / echo (con redirezione)
+- parametri da CMD
+- intro agli IF (TODAY)
+
+Esercizio: creare script che:
+	- prende 3 parametri da CMD
+	- controlla se esistono
+		- se no li richiede con read
+	- Formato: a op b
+		- op= p=piu m=meno x=per d=div
+
+if() {} else {}
+if[] then
+
+fi 	
