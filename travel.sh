@@ -3,12 +3,35 @@
 # se esiste il nome...
 # -z : sse stringa è vuota
 
-if [ -z $1 ]; then
+echo "cancelletto: $#"
+echo "chiocciola $@"
+
+#Lista: eterogenee, non statiche
+possibleNames=("Andrew" "Luke" "XXXX")
+
+#1 echo ${possibleNames[@]}
+
+#2
+#for index in $(seq 0 $(( ${#possibleNames[@]}-1))); do
+#    echo ${possibleNames[$index]}
+#done
+
+#3 ForEach (per ogni elemento.. non per ogni indice)
+for elem in ${possibleNames[@]}; do
+    echo $elem
+done
+
+
+exit 0
+
+if [ $# -ne 1 ]; then
     echo "Devi inserire il nome."
     exit 1
+else
+    name=$1
 fi
 
-echo "Benvenuto $1"
+echo "Benvenuto $name"
 # -p = prompt
 read -p "Inserisci carburante: "  carb
 read -p "scafo (%): " scafo
