@@ -3,11 +3,11 @@
 # se esiste il nome...
 # -z : sse stringa è vuota
 
-echo "cancelletto: $#"
-echo "chiocciola $@"
+#echo "cancelletto: $#"
+#echo "chiocciola $@"
 
 #Lista: eterogenee, non statiche
-possibleNames=("Andrew" "Luke" "XXXX")
+possibleNames=("Andrew" "Luke" "XXXX" "YYYYY")
 
 #1 echo ${possibleNames[@]}
 
@@ -17,16 +17,15 @@ possibleNames=("Andrew" "Luke" "XXXX")
 #done
 
 #3 ForEach (per ogni elemento.. non per ogni indice)
-for elem in ${possibleNames[@]}; do
-    echo $elem
-done
-
-
-exit 0
+#for elem in ${possibleNames[@]}; do
+#    echo $elem
+#done
 
 if [ $# -ne 1 ]; then
-    echo "Devi inserire il nome."
-    exit 1
+    #Estrarre un numero a caso (range?)
+    rndIndex=$(( $RANDOM % ${#possibleNames[@]}))
+    #Assegnare nome
+    name=${possibleNames[$rndIndex]}
 else
     name=$1
 fi
