@@ -5,7 +5,9 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-if [ "${1##*.}" != "cfg" ]; then
+# Nice trick ;)
+estensione=$(echo "$1" | cut -d'.' -f2)
+if [ "$estensione" != "cfg" ]; then
     echo "Errore: il file deve avere estensione .cfg"
     exit 1
 fi
