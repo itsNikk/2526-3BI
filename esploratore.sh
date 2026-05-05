@@ -19,11 +19,15 @@ function move() {
     case $direction in
         w) ((y+=steps));;
         a) ((x-=steps)) ;;
+        #s)
+        #d)
         *)
             echo "Direzione invalida"
             return 1
         ;;
     esac
+
+    
 }
 
 function saveGame() {
