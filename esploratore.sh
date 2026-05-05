@@ -26,6 +26,31 @@ function move() {
     esac
 }
 
-printPosition
+function saveGame() {
+    echo $x > gameState.txt
+    echo $y >> gameState.txt
+    #echo passi
+}
 
+function endGame() {
+    read -p "Vuoi uscire? (s/n)" choice
+
+    if [ $choice == "s" ]; then
+        echo "Ciao."
+        saveGame
+        exit 0
+    fi
+}
+
+trap endGame SIGINT
+
+#true e false sono COMANDI. true restituisce 1, false 0
+running=true
+while $running; do
+    read -p "direction and steps: " direction steps
+
+    move $direction $steps
+    printPosition
+    
+done
 
